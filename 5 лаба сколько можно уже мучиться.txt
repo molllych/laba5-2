@@ -1,0 +1,187 @@
+https://molllych.visualstudio.com/_git/MyFirstProject
+Laboratory5
+
+ssh://MolllyCh@vs-ssh.visualstudio.com:22/_ssh/MyFirstProject
+
+typedef struct Node{ 
+int number;
+char name[100];
+struct Node *left;
+struct Node *right;
+struct Node *parent;
+}Node;
+Node *tmp;
+Node *prev;
+Node *root;
+int main()
+{
+	while (1)
+	{
+		switch (menu())
+		{
+		case 1:
+		{
+			int value;
+			char string[100];
+			cout<<" Add new element"<<endl;
+			cout<<" Enter a number of pasport\n ";
+			cin>>value;
+			cout<<" Enter a surname \n;
+cin>>string[100];
+
+			addNew(value,*parent, string[100]);
+		}
+		break;
+
+case 2:
+		{
+			if (t != NULL)
+			{
+				int b;
+				cout<<"Enter a key for deleting\n";
+				cin>>b;
+if(cin.fail()){ cout<<"Enter an integer, motherfucker!"<<endl;
+cin>>b;}
+				del(tmp, b);
+			}
+			else cout<<"Error!\n";
+		}
+case 3:
+		{
+			if (tmp != NULL)
+			{
+				int seek;
+				cout<<"Enter a key for searchihg\n";
+				cin>>seek;
+				find(tmp, seek);
+			}
+			else cout<<"Error!\n";
+		}
+		break;
+case 4:
+		{
+			if (tmp != NULL)
+			{
+			cout<<"Tree:\n";
+				output(tmp, 0);
+			}
+			else cout<<"Error!\n";
+		}
+		break;
+
+******************************************
+//создание дерева
+Node* addNew(int value,char string[100], Node *parent){
+Node *tmp=(Node*)malloc(sizeof(Node));
+tmp->left=tmp->right=NULL;
+tmp->number=value;
+tmp->name[100]=string[100];
+tmp->parent=NULL;
+prev=tmp;
+ifstream file;
+file.open(f:\\оаип\\5 для создания файла\\5.txt);
+if(!file) {
+cout<<"Error! A file to write data haven't been opened"<<endl;
+return -1;
+}
+else {cout<<"Opening a file..."<<endl;
+return 1;}		
+file<<"Tree.1."<<prev->name[100]<<"-"<<prev->number<<"_"<<prev->parent;
+}
+
+*********************************************
+//слздание нового узла
+Node* addNew(int value,char string[100], Node *parent){
+if(root==NULL){
+Node *root=(Node*)malloc(sizeof(Node));
+root->number=value;
+root->name[100]=string[100];
+tmp=root;
+prev=NULL;
+}
+else{
+Node *tmp=(Node*)malloc(sizeof(Node));
+prev=tmp;
+tmp->number=value;
+tmp->name[100]=string[100];
+
+if(tmp->number==prev->number){ cout<<"Keys should be unique"<<endl;
+return 0;}
+if(tmp->number>prev->number){tmp->number=prev->right}
+if(tmp->number<prev->number){tmp->number=prev->left}
+*tmp->parent=prev;
+}
+ifstream file;
+file.open(f:\\оаип\\5 для создания файла\\5.txt);
+if(!file) {
+cout<<"Error! A file to write data haven't been opened"<<endl;
+return -1;
+}
+else {cout<<"Opening a file..."<<endl;
+return 1;}		
+file<<"Tree.1."<<tmp->name[100]<<"-"<<tmp->number<<"_"<<tmp->parent;
+}
+
+
+
+void del(Node tmp->number, int b)
+{
+	if (tmp->number == NULL)
+		return;
+	else
+	{
+		if (b == tmp->number)
+		{
+			tmp->number = NULL;
+tmp->name= NULL;
+
+		}
+		else
+		{
+			if (b > tmp->number)
+				del(tmp->right, b);
+			else
+				del(tmp->left, b);
+		}
+	}
+}
+void find(Node *tmp, int seek)
+{
+	if (tmp == NULL)
+		return;
+	else
+	{
+		if (seek == tmp->number)
+			cout<<"Your person:"<<tmp->number<<"-"<<tmp->name[100];
+		else
+		{
+			if (tmp > t->number)
+				find(tmp->right, seek);
+			else
+				find(tmp->left, seek);
+		}
+	}
+}
+
+
+void output(Node *tmp, int count)
+{
+	FILE *F1;
+	F1 = fopen("F1.txt", "a");
+	if (t == NULL)
+		return;
+	else
+	{
+		output(t->right, count + 1);
+		for (int i = 0; i < count; i++)
+		{
+			printf("        ");
+			fprintf(F1, "        ");
+		}
+			printf("%d %s\n", t->number, t->name);
+			fprintf(F1, "%d %s\n", t->number, t->name);
+		
+		output(t->left, count + 1);
+		fclose(F1);
+	}
+}
